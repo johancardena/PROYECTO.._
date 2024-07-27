@@ -2,7 +2,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 
-public class DatabaseConnection {
+public class Conexion {
     private static MongoClient mongoClient;
     private static MongoDatabase database;
 
