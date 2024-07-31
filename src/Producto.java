@@ -15,6 +15,30 @@ public class Producto {
         this.imagenUrl = imagenUrl;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
     public Document toDocument() {
         return new Document("id", id)
                 .append("nombre", nombre)
@@ -32,15 +56,5 @@ public class Producto {
                 doc.getString("imagenUrl")
         );
     }
-
-    // Getters y Setters
-    public String getId() { return id; }
-    public String getNombre() { return nombre; }
-    public double getPrecio() { return precio; }
-    public int getStock() { return stock; }
-    public String getImagenUrl() { return imagenUrl; }
-
-    public void actualizarStock(int cantidad) {
-        this.stock += cantidad;
-    }
 }
+

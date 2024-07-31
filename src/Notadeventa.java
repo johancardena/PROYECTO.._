@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Notadeventa {
     private Transaccion transaccion;
 
@@ -5,10 +9,17 @@ public class Notadeventa {
         this.transaccion = transaccion;
     }
 
-    public void imprimirNota() {
-        System.out.println("Nota de Venta:");
-        System.out.println("Producto: " + transaccion.getProducto().getNombre());
-        System.out.println("Cantidad: " + transaccion.getCantidad());
-        System.out.println("Total: " + transaccion.getTotal());
+    public void generarNotadeventa() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("nota_de_venta_" + transaccion.getId() + ".txt"))) {
+            writer.write("Nota de Venta\n");
+            writer.write("ID Transacción: " + transaccion.getId() + "\n");
+            writer.write("Producto: " + transaccion.getProducto().getNombre() + "\n");
+            writer.write("Cantidad: " + transaccion.getCantidad() + "\n");
+            writer.write("Precio Unitario: " + transaccion.getProducto().getPrecio() + "\n");
+            writer.write("Total: " + (transaccion.getProducto().getPrecio() * transaccion.getCantidad()) + "\n");
+            writer.write("Cajero ID: " + transaccion.getCajeroId() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

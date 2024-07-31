@@ -2,22 +2,28 @@ public class Transaccion {
     private String id;
     private Producto producto;
     private int cantidad;
-    private double total;
+    private String cajeroId;
 
-    public Transaccion(String id, Producto producto, int cantidad) {
+    public Transaccion(String id, Producto producto, int cantidad, String cajeroId) {
         this.id = id;
         this.producto = producto;
         this.cantidad = cantidad;
-        this.total = producto.getPrecio() * cantidad;
+        this.cajeroId = cajeroId;
     }
 
-    public void generarNotaDeVenta() {
-        Notadeventa nota = new Notadeventa(this);
-        nota.imprimirNota();
+    public String getId() {
+        return id;
     }
 
-    // Getters y Setters
-    public Producto getProducto() { return producto; }
-    public int getCantidad() { return cantidad; }
-    public double getTotal() { return total; }
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public String getCajeroId() {
+        return cajeroId;
+    }
 }

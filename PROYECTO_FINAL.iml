@@ -8,5 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mongodb.driver.sync" level="project" />
+    <orderEntry type="library" name="itextpdf.tool.xmlworker" level="project" />
+    <orderEntry type="library" name="beigesoft.beige.pdfwriter" level="project" />
   </component>
 </module>

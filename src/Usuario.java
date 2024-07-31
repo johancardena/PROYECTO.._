@@ -1,13 +1,29 @@
 public class Usuario {
-    private String username;
-    private String password;
+    private String id;
+    private String nombre;
+    private String contrasena;
+    private String rol;
 
-    public Usuario(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public Usuario(String id, String nombre, String contrasena, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.contrasena = contrasena;
+        this.rol = rol;
     }
 
-    public boolean login(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public String getRol() {
+        return rol;
     }
 }
