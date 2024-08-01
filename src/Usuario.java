@@ -1,29 +1,29 @@
 public class Usuario {
     private String id;
-    private String nombre;
-    private String contrasena;
-    private String rol;
+    private String username;
+    private String password;
+    private String role;
 
-    public Usuario(String id, String nombre, String contrasena, String rol) {
+    public Usuario(String id, String username, String password, String role) {
         this.id = id;
-        this.nombre = nombre;
-        this.contrasena = contrasena;
-        this.rol = rol;
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
     public String getId() {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUsername() {
+        return username;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getPassword() {
+        return password;
     }
 
-    public String getRol() {
-        return rol;
+    public String getRole() {
+        return role;
     }
 }

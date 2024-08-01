@@ -75,18 +75,11 @@ public class Login1 extends JFrame {
 
             Conexion.close();
 
-            if (role.equals("administrador")) {
-                CellTechHub adminUI = new CellTechHub(user);
-                adminUI.setVisible(true);
-            } else if (role.equals("cajero")) {
-                CellTechHub cashierUI = new CellTechHub(user);
-                cashierUI.setVisible(true);
-            }
+            MainMenu mainMenu = new MainMenu(user);
+            mainMenu.setVisible(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.");
         }
     }
-
-
 }
