@@ -17,7 +17,6 @@ public class Hacercompra extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
 
-
         JLabel lblIdProducto = new JLabel("ID Producto:");
         lblIdProducto.setBounds(20, 20, 100, 25);
         add(lblIdProducto);

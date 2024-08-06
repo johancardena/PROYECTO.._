@@ -2,10 +2,16 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainMenu extends JFrame {
-    private Usuario usuario;
 
-    public MainMenu(Usuario usuario) {
+public class main_menu extends JFrame{
+    private Usuario usuario;
+    private JPanel panel1;
+    private JButton btnIngresarProducto;
+    private JButton btnMostrarProducto;
+    private JButton btnHacerCompra;
+    private JLabel lblMenu;
+
+    public main_menu(Usuario usuario) {
         this.usuario = usuario;
         setTitle("Menú Principal - CellTechHub");
         setSize(400, 300);
@@ -13,7 +19,7 @@ public class MainMenu extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
 
-        JLabel lblMenu = new JLabel("Menú Principal");
+        JLabel lblMenu = new JLabel("MENU PRINCIPAL");
         lblMenu.setBounds(150, 20, 100, 25);
         add(lblMenu);
 
@@ -31,13 +37,13 @@ public class MainMenu extends JFrame {
 
         btnIngresarProducto.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new Ingresarproducto().setVisible(true);
+                new Ingresar_producto().setVisible(true);
             }
         });
 
         btnMostrarProducto.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new MostrarProducto().setVisible(true);
+                new Mostrar_producto().setVisible(true);
             }
         });
 

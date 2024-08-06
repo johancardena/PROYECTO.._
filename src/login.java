@@ -1,23 +1,25 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-public class Login1 extends JFrame {
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class login extends JFrame {
     private JTextField txtUsername;
     private JPasswordField txtPassword;
     private JButton btnLogin;
     private JButton btnCancel;
+    private JPanel mainPanel;
 
-    public Login1() {
+    public login() {
         setTitle("Login - CellTechHub");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
 
-        JLabel lblUsername = new JLabel("Username:");
+        JLabel lblUsername = new JLabel("USERNAME:");
         lblUsername.setBounds(20, 20, 80, 25);
         add(lblUsername);
 
@@ -25,7 +27,7 @@ public class Login1 extends JFrame {
         txtUsername.setBounds(100, 20, 160, 25);
         add(txtUsername);
 
-        JLabel lblPassword = new JLabel("Password:");
+        JLabel lblPassword = new JLabel("PASSWORD:");
         lblPassword.setBounds(20, 60, 80, 25);
         add(lblPassword);
 
@@ -33,11 +35,11 @@ public class Login1 extends JFrame {
         txtPassword.setBounds(100, 60, 160, 25);
         add(txtPassword);
 
-        btnLogin = new JButton("Login");
+        btnLogin = new JButton("ENTER");
         btnLogin.setBounds(40, 100, 100, 25);
         add(btnLogin);
 
-        btnCancel = new JButton("Cancel");
+        btnCancel = new JButton("CANCEL");
         btnCancel.setBounds(150, 100, 100, 25);
         add(btnCancel);
 
@@ -53,7 +55,6 @@ public class Login1 extends JFrame {
             }
         });
     }
-
     private void authenticate() {
         String username = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
@@ -74,8 +75,7 @@ public class Login1 extends JFrame {
             );
 
             Conexion.close();
-
-            MainMenu mainMenu = new MainMenu(user);
+            main_menu mainMenu = new main_menu(user);
             mainMenu.setVisible(true);
             this.dispose();
         } else {
@@ -83,3 +83,6 @@ public class Login1 extends JFrame {
         }
     }
 }
+
+
+

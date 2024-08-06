@@ -1,60 +1,53 @@
 import org.bson.Document;
 
+import java.util.ResourceBundle;
+
 public class Producto {
+    private static ResourceBundle productoDoc;
     private String id;
     private String nombre;
     private double precio;
     private int stock;
-    private String imagenUrl;
 
-    public Producto(String id, String nombre, double precio, int stock, String imagenUrl) {
+
+    public Producto(String string, String id, String nombre, double precio, int stock, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
-        this.imagenUrl = imagenUrl;
+
     }
 
     public String getId() {
         return id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public double getPrecio() {
         return precio;
     }
-
     public int getStock() {
         return stock;
     }
-
     public void setStock(int stock) {
         this.stock = stock;
-    }
-
-    public String getImagenUrl() {
-        return imagenUrl;
     }
 
     public Document toDocument() {
         return new Document("id", id)
                 .append("nombre", nombre)
                 .append("precio", precio)
-                .append("stock", stock)
-                .append("imagenUrl", imagenUrl);
+                .append("stock", stock);
     }
 
     public static Producto fromDocument(Document doc) {
         return new Producto(
-                doc.getString("id"),
+                productoDoc.getString("id"), doc.getString("id"),
                 doc.getString("nombre"),
                 doc.getDouble("precio"),
                 doc.getInteger("stock"),
-                doc.getString("imagenUrl")
-        );
+                productoDoc.getString("imagen"));
     }
 }
 

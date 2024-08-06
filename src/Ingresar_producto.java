@@ -1,18 +1,19 @@
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
 
-public class Ingresarproducto extends JFrame {
+public class Ingresar_producto extends JFrame{
     private JTextField txtId;
     private JTextField txtNombre;
     private JTextField txtDescripcion;
     private JTextField txtPrecio;
     private JTextField txtStock;
+    private JButton INGRESARButton;
 
-    public Ingresarproducto() {
+    public Ingresar_producto() {
         setTitle("Ingresar Producto - CellTechHub");
         setSize(300, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -27,7 +28,7 @@ public class Ingresarproducto extends JFrame {
         txtId.setBounds(100, 20, 160, 25);
         add(txtId);
 
-        JLabel lblNombre = new JLabel("Nombre:");
+        JLabel lblNombre = new JLabel("NOMBRE:");
         lblNombre.setBounds(20, 60, 80, 25);
         add(lblNombre);
 
@@ -35,15 +36,15 @@ public class Ingresarproducto extends JFrame {
         txtNombre.setBounds(100, 60, 160, 25);
         add(txtNombre);
 
-        JLabel lblDescripcion = new JLabel("Descripción:");
-        lblDescripcion.setBounds(20, 100, 80, 25);
+        JLabel lblDescripcion = new JLabel("DESCRIPCION:");
+        lblDescripcion.setBounds(20, 100, 87, 25);
         add(lblDescripcion);
 
         txtDescripcion = new JTextField();
         txtDescripcion.setBounds(100, 100, 160, 25);
         add(txtDescripcion);
 
-        JLabel lblPrecio = new JLabel("Precio:");
+        JLabel lblPrecio = new JLabel("PRECIO:");
         lblPrecio.setBounds(20, 140, 80, 25);
         add(lblPrecio);
 
@@ -51,7 +52,7 @@ public class Ingresarproducto extends JFrame {
         txtPrecio.setBounds(100, 140, 160, 25);
         add(txtPrecio);
 
-        JLabel lblStock = new JLabel("Stock:");
+        JLabel lblStock = new JLabel("STOCK:");
         lblStock.setBounds(20, 180, 80, 25);
         add(lblStock);
 
@@ -59,17 +60,15 @@ public class Ingresarproducto extends JFrame {
         txtStock.setBounds(100, 180, 160, 25);
         add(txtStock);
 
-        JButton btnIngresar = new JButton("Ingresar");
+        JButton btnIngresar = new JButton("INGRESAR");
         btnIngresar.setBounds(100, 220, 160, 25);
         add(btnIngresar);
 
         btnIngresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                ingresarProducto();
+            public void actionPerformed(ActionEvent e) {  ingresarProducto();
             }
         });
     }
-
     private void ingresarProducto() {
         String id = txtId.getText();
         String nombre = txtNombre.getText();

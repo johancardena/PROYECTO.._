@@ -1,17 +1,19 @@
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
 
-public class MostrarProducto extends JFrame {
+public class Mostrar_producto extends JFrame {
     private JTextField txtId;
     private JTextArea txtAreaDetalles;
     private JLabel lblImagenProducto;
+    private JButton btnBuscar;
 
-    public MostrarProducto() {
+    public Mostrar_producto() {
         setTitle("Mostrar Producto - CellTechHub");
         setSize(400, 500); // Aumenta el tamaño de la ventana para acomodar la imagen
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -26,7 +28,7 @@ public class MostrarProducto extends JFrame {
         txtId.setBounds(100, 20, 160, 25);
         add(txtId);
 
-        JButton btnBuscar = new JButton("Buscar");
+        JButton btnBuscar = new JButton("BUSCAR");
         btnBuscar.setBounds(270, 20, 100, 25);
         add(btnBuscar);
 
@@ -58,10 +60,10 @@ public class MostrarProducto extends JFrame {
 
         if (producto != null) {
             String detalles = "ID: " + producto.getString("id") +
-                    "\nNombre: " + producto.getString("nombre") +
-                    "\nDescripción: " + producto.getString("descripcion") +
-                    "\nPrecio: " + producto.getDouble("precio") +
-                    "\nStock: " + producto.getInteger("stock");
+                    "\nNOMBRE: " + producto.getString("nombre") +
+                    "\nDESCRIPCION: " + producto.getString("descripcion") +
+                    "\nPRECIO: " + producto.getDouble("precio") +
+                    "\nSTOCK: " + producto.getInteger("stock");
             txtAreaDetalles.setText(detalles);
 
             String imageUrl = producto.getString("imagenUrl");
@@ -86,6 +88,4 @@ public class MostrarProducto extends JFrame {
             lblImagenProducto.setText("");
         }
     }
-
-
 }
