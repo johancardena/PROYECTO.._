@@ -49,7 +49,7 @@ public class main_menu extends JFrame{
 
         btnHacerCompra.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new Hacercompra(usuario).setVisible(true);
+                new Hacer_compra(usuario).setVisible(true);
             }
         });
     }
