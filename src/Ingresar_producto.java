@@ -11,11 +11,12 @@ public class Ingresar_producto extends JFrame{
     private JTextField txtDescripcion;
     private JTextField txtPrecio;
     private JTextField txtStock;
+    private JTextField txtImagenUrl;
     private JButton INGRESARButton;
 
     public Ingresar_producto() {
         setTitle("Ingresar Producto - CellTechHub");
-        setSize(300, 300);
+        setSize(300, 350); // Aumenta el tamaño de la ventana para acomodar el nuevo campo
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -60,21 +61,32 @@ public class Ingresar_producto extends JFrame{
         txtStock.setBounds(100, 180, 160, 25);
         add(txtStock);
 
+        JLabel lblImagenUrl = new JLabel("Imagen URL:");
+        lblImagenUrl.setBounds(20, 220, 80, 25);
+        add(lblImagenUrl);
+
+        txtImagenUrl = new JTextField();
+        txtImagenUrl.setBounds(100, 220, 160, 25);
+        add(txtImagenUrl);
+
         JButton btnIngresar = new JButton("INGRESAR");
-        btnIngresar.setBounds(100, 220, 160, 25);
+        btnIngresar.setBounds(100, 260, 160, 25);
         add(btnIngresar);
 
         btnIngresar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {  ingresarProducto();
+            public void actionPerformed(ActionEvent e) {
+                ingresarProducto();
             }
         });
     }
+
     private void ingresarProducto() {
         String id = txtId.getText();
         String nombre = txtNombre.getText();
         String descripcion = txtDescripcion.getText();
         double precio = Double.parseDouble(txtPrecio.getText());
         int stock = Integer.parseInt(txtStock.getText());
+        String imagenUrl = txtImagenUrl.getText();
 
         Conexion.connect();
         MongoCollection<Document> productCollection = Conexion.getDatabase().getCollection("productos");
@@ -83,7 +95,8 @@ public class Ingresar_producto extends JFrame{
                 .append("nombre", nombre)
                 .append("descripcion", descripcion)
                 .append("precio", precio)
-                .append("stock", stock);
+                .append("stock", stock)
+                .append("imagenUrl", imagenUrl); // Añade la URL de la imagen al documento
 
         productCollection.insertOne(producto);
 

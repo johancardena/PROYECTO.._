@@ -15,7 +15,7 @@ public class Mostrar_producto extends JFrame {
 
     public Mostrar_producto() {
         setTitle("Mostrar Producto - CellTechHub");
-        setSize(400, 500); // Aumenta el tamaño de la ventana para acomodar la imagen
+        setSize(400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -28,7 +28,7 @@ public class Mostrar_producto extends JFrame {
         txtId.setBounds(100, 20, 160, 25);
         add(txtId);
 
-        JButton btnBuscar = new JButton("BUSCAR");
+        btnBuscar = new JButton("Buscar");
         btnBuscar.setBounds(270, 20, 100, 25);
         add(btnBuscar);
 
@@ -37,7 +37,7 @@ public class Mostrar_producto extends JFrame {
         add(txtAreaDetalles);
 
         lblImagenProducto = new JLabel();
-        lblImagenProducto.setBounds(20, 270, 350, 200); // Ubica el JLabel para la imagen
+        lblImagenProducto.setBounds(20, 270, 350, 200);
         add(lblImagenProducto);
 
         btnBuscar.addActionListener(new ActionListener() {
@@ -60,10 +60,10 @@ public class Mostrar_producto extends JFrame {
 
         if (producto != null) {
             String detalles = "ID: " + producto.getString("id") +
-                    "\nNOMBRE: " + producto.getString("nombre") +
-                    "\nDESCRIPCION: " + producto.getString("descripcion") +
-                    "\nPRECIO: " + producto.getDouble("precio") +
-                    "\nSTOCK: " + producto.getInteger("stock");
+                    "\nNombre: " + producto.getString("nombre") +
+                    "\nDescripción: " + producto.getString("descripcion") +
+                    "\nPrecio: " + producto.getDouble("precio") +
+                    "\nStock: " + producto.getInteger("stock");
             txtAreaDetalles.setText(detalles);
 
             String imageUrl = producto.getString("imagenUrl");
