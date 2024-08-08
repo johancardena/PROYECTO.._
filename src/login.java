@@ -13,7 +13,7 @@ public class login extends JFrame {
     private JPanel mainPanel;
 
     public login() {
-        setTitle("Login - CellTechHub");
+        setTitle("Login ");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
