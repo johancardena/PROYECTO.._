@@ -16,7 +16,7 @@ public class Ingresar_producto extends JFrame{
 
     public Ingresar_producto() {
         setTitle("Ingresar Producto - CellTechHub");
-        setSize(300, 350); // Aumenta el tamaño de la ventana para acomodar el nuevo campo
+        setSize(300, 350);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
