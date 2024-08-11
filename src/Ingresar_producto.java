@@ -17,7 +17,7 @@ public class Ingresar_producto extends JFrame {
     private JButton btnEliminar;
 
     public Ingresar_producto() {
-        setTitle("Gestionar Producto - CellTechHub");
+        setTitle("Gestionar Producto");
         setSize(300, 450);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
